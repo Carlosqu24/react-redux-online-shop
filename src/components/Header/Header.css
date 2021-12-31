@@ -1,0 +1,16 @@
+.header {
+      width: 100%;
+}
+
+.header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+}
+
+.navbar__link {
+      margin-left: 15px;
+
+      color: #000;
+      font-size: 18px;
+}

@@ -18,6 +18,18 @@
 
 .product-card__body {
       width: 100%;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.24);
+
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+}
+
+.product-card__body * {
+      margin: 0 0 10px 0;
 }
 
 .product-card__name {
@@ -25,7 +37,8 @@
       font-weight: 400;
 }
 
-.product-card__gender {
+.product-card__gender,
+.product-card__price {
       padding: 8px;
       border-radius: var(--border-radius);
 
