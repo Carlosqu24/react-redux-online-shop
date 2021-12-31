@@ -1,0 +1,39 @@
+.product-card {
+      padding: 1rem; 
+      
+      background: rgba(241, 241, 241, 0.562);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+      border: 1px solid rgba(0, 0, 0, 0.055);
+      border-radius: var(--border-radius);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+}
+
+.product-card__img {
+      width: 100%;
+}
+
+.product-card__body {
+      width: 100%;
+}
+
+.product-card__name {
+      font-size: 22px;
+      font-weight: 400;
+}
+
+.product-card__gender {
+      padding: 8px;
+      border-radius: var(--border-radius);
+
+      background: #000;
+      color: #fff;
+      font-weight: 300;
+}
+
+.product-card__btn {
+      border-radius: var(--border-radius);
+}
