@@ -12,7 +12,7 @@ export const CartProductsGrid = () => {
       const dispatch = useDispatch();
 
       return (
-            <>
+            <div>
                   <button
                         className="btn"
                         onClick={() => dispatch(resetCart())}
@@ -34,6 +34,6 @@ export const CartProductsGrid = () => {
                               ))
                         }
                   </div>
-            </>
+            </div>
       )
 }

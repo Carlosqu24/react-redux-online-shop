@@ -1,8 +1,14 @@
 .header {
       width: 100%;
+      height: 100px;
+      margin-bottom: 20px;
+
+      background: rgb(255, 255, 255);
 }
 
 .header .container {
+      height: inherit;
+
       display: flex;
       align-items: center;
       justify-content: space-between;

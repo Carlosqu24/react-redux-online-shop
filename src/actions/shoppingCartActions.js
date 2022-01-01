@@ -1,17 +1,11 @@
-import { 
-      ADD_CART_ITEM, 
-      DELETE_CART_ITEM, 
-      INCREMENT_QUANTITY_CART_ITEM,
-      DECREMENT_QUANTITY_CART_ITEM,
-      RESET_CART
-} from "../types"
+import { TYPES } from "../types"
 
-export const addCartItem = (item) => ({ type: ADD_CART_ITEM, payload: item });
+export const addCartItem = (item) => ({ type: TYPES.ADD_CART_ITEM, payload: item });
 
-export const deleteCartItem = (id) => ({ type: DELETE_CART_ITEM, payload: id });
+export const deleteCartItem = (id) => ({ type: TYPES.DELETE_CART_ITEM, payload: id });
 
-export const incrementQuantityCartItem = (id) => ({ type: INCREMENT_QUANTITY_CART_ITEM, payload: id });
+export const incrementQuantityCartItem = (id) => ({ type: TYPES.INCREMENT_QUANTITY_CART_ITEM, payload: id });
 
-export const decrementQuantityCartItem = (id) => ({ type: DECREMENT_QUANTITY_CART_ITEM, payload: id });
+export const decrementQuantityCartItem = (id) => ({ type: TYPES.DECREMENT_QUANTITY_CART_ITEM, payload: id });
 
-export const resetCart = () => ({ type: RESET_CART });
+export const resetCart = () => ({ type: TYPES.RESET_CART });

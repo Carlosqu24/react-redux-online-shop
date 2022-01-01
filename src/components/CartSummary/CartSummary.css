@@ -1,0 +1,11 @@
+.cart-summary {
+      width: 50%;
+      margin-bottom: 20px;
+      padding: 1rem;
+
+      background: rgb(248, 248, 248);
+}
+
+.cart-summary * {
+      margin: 10px 0;
+}
