@@ -1,25 +1,33 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { 
+      addCartItem,
+      deleteCartItem,
+      resetCart
+} from '../../actions/shoppingCartActions';
 
 import './Product.css'
 
-export const Product = ({ name, description, gender, imgUrl }) => {
+export const Product = ({ product }) => {
+      const dispatch = useDispatch();
+      
       return (
-            <div className="product-card">
+            <div className="card">
                   <img 
-                        src={ imgUrl } 
-                        className="product-card__img"
-                        alt={ name } 
+                        src={ product.imgUrl } 
+                        className="card__img"
+                        alt={ product.name } 
                   />
                   
-                  <div className="product-card__body">
-                        <h2 className="product-card__name">{ name }</h2>
+                  <div className="card__body">
+                        <h2 className="product-card__name">{ product.name }</h2>
                         <span
                               className="product-card__gender"
-                        >{ gender }</span>
-                        <p>{ description }</p>
+                        >{ product.gender }</span>
+                        <p>{ product.description }</p>
                         <button
                               className="btn product-card__btn"
-
+                              onClick={() => dispatch(addCartItem(product))}
                         >Add to cart</button>
                   </div>
             </div>

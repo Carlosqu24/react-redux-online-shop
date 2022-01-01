@@ -1,32 +1,49 @@
 import React from 'react'
 
+import { useDispatch } from 'react-redux'
+import { 
+      addCartItem,
+      deleteCartItem,
+      incrementQuantityCartItem,
+      decrementQuantityCartItem,
+      resetCart
+} from '../../actions/shoppingCartActions';
+
 import './CartProduct.css'
 
-export const CartProduct = ({ name, description, price, quantity, gender, imgUrl }) => {
+export const CartProduct = ({ id, name, description, price, quantity, gender, imgUrl }) => {
+      const dispatch = useDispatch();
+
       return (
-            <div className="product-card">
+            <div className="card">
                   <img 
                         src={ imgUrl } 
-                        className="product-card__img"
+                        className="card__img"
                         alt={ name } 
                   />
                   
-                  <div className="product-card__body">
+                  <div className="card__body">
                         <h2 className="product-card__name">{ name }</h2>
-                        <span
-                              className="product-card__gender"
-                        >{ gender }</span>
-                        <span 
-                              className="product-card__price"
-                        >${ price }</span>
-                        <span 
-                              className="product-card__quantity"
-                        >{ quantity }</span>
+                        <span className="product-card__gender" >{ gender }</span>
+                        <span className="product-card__price" >${ price }</span>
+                        <span className="product-card__quantity" >{ quantity }</span>
+
+                        <div className="quantity-actions">
+                              <button 
+                                    onClick={() => dispatch(incrementQuantityCartItem(id))}
+                                    className="btn btn--quantity-actions"
+                              >+</button>
+                              <button 
+                                    onClick={() => dispatch(decrementQuantityCartItem(id))}
+                                    className="btn btn--quantity-actions"
+                              >-</button>
+                        </div>
+
                         <p>{ description }</p>
                         <button
                               className="btn product-card__btn"
-
-                        >Add to cart</button>
+                              onClick={() => dispatch(deleteCartItem(id))}
+                        >Delete to cart</button>
                   </div>
             </div>
       )
