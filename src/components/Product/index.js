@@ -1,10 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { 
-      addCartItem,
-      deleteCartItem,
-      resetCart
-} from '../../actions/shoppingCartActions';
+import { addCartItem } from '../../actions/shoppingCartActions';
 
 import './Product.css'
 
@@ -14,7 +10,7 @@ export const Product = ({ product }) => {
       return (
             <div className="card">
                   <img 
-                        src={ product.imgUrl } 
+                        src={ product.imageURL } 
                         className="card__img"
                         alt={ product.name } 
                   />

@@ -22,14 +22,14 @@ export const CartProductsGrid = () => {
                         {
                               shoppingCart.map(item => (
                                     <CartProduct
-                                          key={item.id}
-                                          id={item.id}
+                                          key={item._id}
+                                          id={item._id}
                                           name={item.name}
                                           description={item.description}
                                           price={item.price}
                                           quantity={item.quantity}
                                           gender={item.gender}
-                                          imgUrl={item.imgUrl}
+                                          imageURL={item.imageURL}
                                     />
                               ))
                         }

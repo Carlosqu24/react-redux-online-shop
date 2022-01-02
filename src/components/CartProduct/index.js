@@ -1,23 +1,17 @@
 import React from 'react'
 
 import { useDispatch } from 'react-redux'
-import { 
-      addCartItem,
-      deleteCartItem,
-      incrementQuantityCartItem,
-      decrementQuantityCartItem,
-      resetCart
-} from '../../actions/shoppingCartActions';
+import { deleteCartItem, incrementQuantityCartItem, decrementQuantityCartItem } from '../../actions/shoppingCartActions';
 
 import './CartProduct.css'
 
-export const CartProduct = ({ id, name, description, price, quantity, gender, imgUrl }) => {
+export const CartProduct = ({ id, name, description, price, quantity, gender, imageURL }) => {
       const dispatch = useDispatch();
 
       return (
             <div className="card">
                   <img 
-                        src={ imgUrl } 
+                        src={ imageURL } 
                         className="card__img"
                         alt={ name } 
                   />
