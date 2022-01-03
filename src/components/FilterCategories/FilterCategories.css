@@ -1,0 +1,25 @@
+.form-filter {
+      padding: 1rem;
+
+      background: rgb(248, 248, 248);
+}
+
+.form-filter-groups {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+}
+
+.filter-group {
+      margin: 24px 24px 24px 0;
+
+      display: inline;
+}
+
+.form-group {
+      display: block;
+}
+
+.form-group * {
+      
+}
