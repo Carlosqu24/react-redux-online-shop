@@ -34,3 +34,18 @@ body {
       background: rgb(255, 255, 255);
       color: #000;
 }
+
+label {
+      font-size: 18px;
+      
+}
+
+input {
+      padding: 8px 10px;
+}
+/* 
+.page {
+      display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+} */

@@ -23,6 +23,8 @@ export const Product = ({ product }) => {
 
                         <span>{ product.type }</span>
 
+                        <span>${ product.price }</span>
+
                         <p>{ product.description }</p>
                         <button
                               className="btn product-card__btn"

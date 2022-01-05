@@ -96,21 +96,31 @@ export const FilterCategories = () => {
                               </div>
                         </div>
 
-                        {/* <div className="filter-group">
-                              <h3>Price</h3>
+                        <div className="filter-group">
+                              <h3>Minimun Price</h3>
                               <div className="form-group">
-                                    <span>Min: $100</span>
                                     <input
-                                          type="range"
+                                          type="number"
                                           name="price"
                                           min="100"
                                           max="1000"
                                           onChange={handleInputChange}
                                     />
-                                    <span>Max: $1000</span>
-                                    <p>Range: ${form.price}</p>
+                                    {/* <p>Min price: ${form.price}</p> */}
                               </div>
-                        </div> */}
+                        </div>
+
+                        <div className="filter-group">
+                              <h3>Category</h3>
+                              <div className="form-group">
+                                    <input
+                                          type="text"
+                                          name="category"
+                                          onChange={handleInputChange}
+                                    />
+                                    {/* <p>Min price: ${form.price}</p> */}
+                              </div>
+                        </div>
                   </div>
 
                   

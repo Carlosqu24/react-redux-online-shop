@@ -3,3 +3,15 @@
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
       gap: 1rem;
 }
+
+.grid--products {
+      width: 100%;
+      margin-left: 10px;
+}
+
+@media screen and (max-width: 750px) {
+      .grid--products {
+            margin-left: 0;
+            margin-top: 10px;
+      }
+}
