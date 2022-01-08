@@ -17,15 +17,16 @@ export const Product = ({ product }) => {
                   
                   <div className="card__body">
                         <h2 className="product-card__name">{ product.name }</h2>
-                        <span
-                              className="product-card__gender"
-                        >{ product.gender }</span>
+                        
+                        <div className="product-card__categories">
+                              <span
+                                    className="product-card__gender"
+                              >{ product.gender }</span>
 
-                        <span>{ product.type }</span>
+                              <span className="product-card__gender">{ product.type }</span>
+                        </div>
 
-                        <span>${ product.price }</span>
-
-                        <p>{ product.description }</p>
+                        <span className="product-card__price" >${ product.price }</span>
                         <button
                               className="btn product-card__btn"
                               onClick={() => dispatch(addCartItem(product))}

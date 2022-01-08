@@ -24,6 +24,11 @@
 .form-group * {
       
 }
+/* 
+.form-group input[type=number],
+.form-group input[type=text] {
+      width: 100%;
+} */
 
 @media screen and (max-width: 750px) {
       .form-filter {
