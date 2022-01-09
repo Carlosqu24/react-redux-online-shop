@@ -6,7 +6,11 @@ export default function shoppingCartReducer(state = initialState, action) {
       switch (action.type) {
             
             case TYPES.CART.ADD_CART_ITEM:
-                  const newProduct = { ...action.payload, quantity: 1 };
+                  const newProduct = { 
+                        ...action.payload, 
+                        quantity: 1, 
+                        afterTaxPrice: action.payload.price + (action.payload.price * 0.13) 
+                  };
 
                   return [...state, newProduct];
 
