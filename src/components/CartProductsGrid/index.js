@@ -25,10 +25,8 @@ export const CartProductsGrid = () => {
                                           key={item._id}
                                           id={item._id}
                                           name={item.name}
-                                          description={item.description}
                                           price={item.price}
                                           quantity={item.quantity}
-                                          gender={item.gender}
                                           imageURL={item.imageURL}
                                     />
                               ))

@@ -19,11 +19,40 @@ export const FilterCategories = () => {
       const handleSubmit = async (e) => {
             e.preventDefault();
 
+            console.log(form)
+
             const res = await fetch(`http://localhost:9000/products${formatUrlParams(form)}`)
             const data = await res.json()
 
             dispatch(setProducts(data));
       };
+
+      // const filterItems = [
+      //       {
+      //             id: 1,
+      //             name: 'Gender',
+      //             options: [{
+      //                               id: new Date().getTime(),
+      //                               title: 'All'
+      //                         }, {
+      //                               id: new Date().getTime(),
+      //                               title: 'Male'
+      //                         }, {
+      //                               id: new Date().getTime(),
+      //                               title: 'Female'
+      //                         }]
+      //       },
+      //       {
+      //             id: 2,
+      //             name: 'Type',
+      //             options: ['All', 'Shoe', 'Shirt']
+      //       },
+      //       {
+      //             id: 3,
+      //             name: 'Category',
+      //             options: ['All', 'Sport']
+      //       }
+      // ]
 
       return (
             <form className="form-filter" onSubmit={handleSubmit}>
@@ -32,68 +61,26 @@ export const FilterCategories = () => {
                   <div className="form-filter-groups">
                         <div className="filter-group">
                               <h3>Gender</h3>
-                              <div className="form-group">
-                                    <label htmlFor="gender">All</label>
-                                    <input
-                                          type="radio"
-                                          name="gender"
-                                          value="all"
-                                          onChange={handleInputChange}
-                                    />
-                              </div>
-
-                              <div className="form-group">
-                                    <label htmlFor="gender">Male</label>
-                                    <input
-                                          type="radio"
-                                          name="gender"
-                                          value="male"
-                                          onChange={handleInputChange}
-                                    />
-                              </div>
-
-                              <div className="form-group">
-                                    <label htmlFor="gender">Female</label>
-                                    <input
-                                          type="radio"
-                                          name="gender"
-                                          value="female"
-                                          onChange={handleInputChange}
-                                    />
-                              </div>
+                              <select 
+                                    name="gender"
+                                    onChange={handleInputChange}
+                              >
+                                    <option value="all">All</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                              </select>
                         </div>
 
                         <div className="filter-group">
                               <h3>Type</h3>
-                              <div className="form-group">
-                                    <label htmlFor="type">All</label>
-                                    <input
-                                          type="radio"
-                                          name="type"
-                                          value="all"
-                                          onChange={handleInputChange}
-                                    />
-                              </div>
-
-                              <div className="form-group">
-                                    <label htmlFor="type">Shoe</label>
-                                    <input
-                                          type="radio"
-                                          name="type"
-                                          value="shoe"
-                                          onChange={handleInputChange}
-                                    />
-                              </div>
-
-                              <div className="form-group">
-                                    <label htmlFor="type">Shirt</label>
-                                    <input
-                                          type="radio"
-                                          name="type"
-                                          value="shirt"
-                                          onChange={handleInputChange}
-                                    />
-                              </div>
+                              <select 
+                                    name="type"
+                                    onChange={handleInputChange}
+                              >
+                                    <option value="all">All</option>
+                                    <option value="shoe">Shoe</option>
+                                    <option value="shirt">Shirt</option>
+                              </select>
                         </div>
 
                         <div className="filter-group">
@@ -106,26 +93,51 @@ export const FilterCategories = () => {
                                           max="1000"
                                           onChange={handleInputChange}
                                     />
-                                    {/* <p>Min price: ${form.price}</p> */}
+                                    
                               </div>
                         </div>
 
                         <div className="filter-group">
                               <h3>Category</h3>
-                              <div className="form-group">
-                                    <input
-                                          type="text"
-                                          name="category"
-                                          onChange={handleInputChange}
-                                    />
-                                    {/* <p>Min price: ${form.price}</p> */}
-                              </div>
+                              <select 
+                                    name="category"
+                                    onChange={handleInputChange}
+                              >
+                                    <option value="all">All</option>
+                                    <option value="sport">Sport</option>
+                                    <option value="casual">Casual</option>
+                              </select>
                         </div>
+
+                        {/* {
+                              filterItems.map(item => (
+                                    <div className="filter-group">
+                                          <h3>{item.name}</h3>
+
+                                          <select 
+                                                name={item.name.toLowerCase()} 
+                                                key={item.id}
+                                                onChange={handleInputChange}
+                                          >
+                                                {
+                                                      item.options.map(option => (
+                                                            <option 
+                                                                  key={new Date().getTime()}
+                                                                  value={option.title.toLowerCase()}
+                                                            >
+                                                                  { option }
+                                                            </option>
+                                                      ))
+                                                }
+                                          </select>
+                                    </div>
+                              ))
+                        } */}
                   </div>
 
-                  
 
-                  
+
+
 
                   <button className="btn" type='submit' >Filter</button>
             </form>

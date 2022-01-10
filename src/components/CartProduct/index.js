@@ -5,7 +5,7 @@ import { deleteCartItem, incrementQuantityCartItem, decrementQuantityCartItem } 
 
 import './CartProduct.css'
 
-export const CartProduct = ({ id, name, description, price, quantity, gender, imageURL }) => {
+export const CartProduct = ({ id, name, price, quantity, imageURL }) => {
       const dispatch = useDispatch();
 
       return (
@@ -18,22 +18,18 @@ export const CartProduct = ({ id, name, description, price, quantity, gender, im
                   
                   <div className="card__body">
                         <h2 className="product-card__name">{ name }</h2>
-                        <span className="product-card__gender" >{ gender }</span>
                         <span className="product-card__price" >${ price }</span>
-                        <span className="product-card__quantity" >{ quantity }</span>
-
                         <div className="quantity-actions">
                               <button 
                                     onClick={() => dispatch(incrementQuantityCartItem(id))}
                                     className="btn btn--quantity-actions"
                               >+</button>
+                              <span className="product-card__quantity" >{ quantity }</span>
                               <button 
                                     onClick={() => dispatch(decrementQuantityCartItem(id))}
                                     className="btn btn--quantity-actions"
                               >-</button>
                         </div>
-
-                        <p>{ description }</p>
                         <button
                               className="btn product-card__btn"
                               onClick={() => dispatch(deleteCartItem(id))}
