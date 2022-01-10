@@ -1,11 +1,16 @@
 import React from 'react'
 
 import { useDispatch } from 'react-redux'
-import { deleteCartItem, incrementQuantityCartItem, decrementQuantityCartItem } from '../../actions/shoppingCartActions';
+import { 
+      deleteCartItem, 
+      incrementQuantityCartItem, 
+      decrementQuantityCartItem,
+      setSizeCartItem
+} from '../../actions/shoppingCartActions';
 
 import './CartProduct.css'
 
-export const CartProduct = ({ id, name, price, quantity, imageURL }) => {
+export const CartProduct = ({ id, name, price, type, sizes, quantity, imageURL }) => {
       const dispatch = useDispatch();
 
       return (
@@ -30,6 +35,31 @@ export const CartProduct = ({ id, name, price, quantity, imageURL }) => {
                                     className="btn btn--quantity-actions"
                               >-</button>
                         </div>
+
+                        {
+                              type == 'shirt'
+                                    && (
+                                          <div className="size-actions">
+                                                <select 
+                                                      name="size" 
+                                                      className="form-control"
+                                                      onChange={(e) => dispatch(setSizeCartItem({ id, size: e.target.value }))}
+                                                >
+                                                      {
+                                                            sizes.map(sizeItem => (
+                                                                  <option 
+                                                                        key={new Date().getTime()} 
+                                                                        value={sizeItem}
+                                                                  >
+                                                                        {sizeItem}
+                                                                  </option>
+                                                            ))
+                                                      }
+                                                </select>
+                                          </div>
+                                    )
+                        }
+
                         <button
                               className="btn product-card__btn"
                               onClick={() => dispatch(deleteCartItem(id))}

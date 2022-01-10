@@ -41,6 +41,17 @@ export default function shoppingCartReducer(state = initialState, action) {
 
                   return mappedCart;
 
+            case TYPES.CART.SET_SIZE_CART_ITEM:
+                  const mappedSizedCart = state.map(item => {
+                        if (item._id == action.payload.id) {
+                              item.size = action.payload.size
+                        }
+
+                        return item;
+                  });
+
+                  return mappedSizedCart;
+
             case TYPES.CART.RESET_CART:
                   return initialState;
 

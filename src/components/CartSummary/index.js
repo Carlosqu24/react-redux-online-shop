@@ -7,8 +7,6 @@ import './CartSummary.css'
 export const CartSummary = () => {
       const shoppingCart = useSelector(state => state.shoppingCart)
 
-      console.log(shoppingCart)
-
       const calculateTotalAmount = () => {
             const allPrices = shoppingCart.map(item => item.quantity * item.afterTaxPrice);
 

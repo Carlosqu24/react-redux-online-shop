@@ -8,4 +8,6 @@ export const incrementQuantityCartItem = (id) => ({ type: TYPES.CART.INCREMENT_Q
 
 export const decrementQuantityCartItem = (id) => ({ type: TYPES.CART.DECREMENT_QUANTITY_CART_ITEM, payload: id });
 
+export const setSizeCartItem = (payload) => ({ type: TYPES.CART.SET_SIZE_CART_ITEM, payload: payload });
+
 export const resetCart = () => ({ type: TYPES.CART.RESET_CART });
