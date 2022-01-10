@@ -63,6 +63,7 @@ export const FilterCategories = () => {
                               <h3>Gender</h3>
                               <select 
                                     name="gender"
+                                    className="form-control"
                                     onChange={handleInputChange}
                               >
                                     <option value="all">All</option>
@@ -75,6 +76,7 @@ export const FilterCategories = () => {
                               <h3>Type</h3>
                               <select 
                                     name="type"
+                                    className="form-control"
                                     onChange={handleInputChange}
                               >
                                     <option value="all">All</option>
@@ -88,6 +90,7 @@ export const FilterCategories = () => {
                               <div className="form-group">
                                     <input
                                           type="number"
+                                          className="form-control"
                                           name="price"
                                           min="100"
                                           max="1000"
@@ -101,6 +104,7 @@ export const FilterCategories = () => {
                               <h3>Category</h3>
                               <select 
                                     name="category"
+                                    className="form-control"
                                     onChange={handleInputChange}
                               >
                                     <option value="all">All</option>
