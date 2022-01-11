@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { v4 } from 'uuid';
 import { useDispatch } from 'react-redux'
 import { 
       deleteCartItem, 
@@ -48,7 +48,7 @@ export const CartProduct = ({ id, name, price, type, sizes, quantity, imageURL }
                                                       {
                                                             sizes.map(sizeItem => (
                                                                   <option 
-                                                                        key={new Date().getTime()} 
+                                                                        key={v4()} 
                                                                         value={sizeItem}
                                                                   >
                                                                         {sizeItem}

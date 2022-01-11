@@ -1,11 +1,12 @@
 .form-filter {
+      width: 400px;
       padding: 1rem;
 
       background: rgb(248, 248, 248);
 }
 
 .form-filter-groups {
-      width: 300px;
+      width: 100%;
 
       display: flex;
       flex-direction: column;
@@ -15,13 +16,13 @@
 
 .filter-group {
       width: 100%;
-      margin: 24px 24px 24px 0;
+      padding: 24px 0;
 
       display: inline;
 }
 
 .form-group {
-      display: block;
+      
 }
 
 .form-group * {
