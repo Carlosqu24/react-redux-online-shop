@@ -6,5 +6,5 @@
 ## Cart page
 ![](./docs/cart-page.png)
 
-## Home page
+## Purchase successfully
 ![](./docs/buy-success.png)
